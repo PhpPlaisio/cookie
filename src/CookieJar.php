@@ -208,7 +208,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    * cookie with outdated expiry will be added to this cookie jar.
    *
    * @param string $name                The name of the cookie.
-   * @param bool   $removeFromUserAgent Whether to remove the cookie from auer agent.
+   * @param bool   $removeFromUserAgent Whether to remove the cookie from user agent.
    */
   public function remove(string $name, bool $removeFromUserAgent = true): void
   {
