@@ -1,0 +1,9 @@
+/.idea/
+/.phpunit.result.cache
+/bin/
+/composer.lock
+/test/coverage.xml
+/test/etc/columns.txt
+/test/etc/routines.json
+/test/report/
+/vendor/
