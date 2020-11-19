@@ -6,7 +6,7 @@ namespace Plaisio\Cookie;
 use SetBased\Exception\FallenException;
 
 /**
- *
+ * The cookie jar, class for handling cookies.
  */
 class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
 {
@@ -180,7 +180,6 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    * `$cookies[$name] = $cookie;`. This is equivalent to [[add()]].
    *
    * @param mixed $name   The name of the cookie.
-   *
    * @param mixed $cookie The cookie to be added.
    */
   public function offsetSet($name, $cookie)
