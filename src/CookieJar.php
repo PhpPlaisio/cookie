@@ -31,7 +31,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
       switch (true)
       {
         case is_string($value):
-          $this->cookies[$key] = new Cookie(['name' => $key, 'value' => $value, 'expire' => null]);
+          $this->cookies[$key] = new Cookie(['name' => $key, 'value' => $value, 'expires' => null]);
           break;
 
         case is_array($value):
@@ -135,9 +135,9 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
   {
     return (isset($this->cookies[$name]) &&
       $this->cookies[$name]->value!=='' &&
-      ($this->cookies[$name]->expire===null ||
-        $this->cookies[$name]->expire===0 ||
-        $this->cookies[$name]->expire>=time()));
+      ($this->cookies[$name]->expires===null ||
+        $this->cookies[$name]->expires===0 ||
+        $this->cookies[$name]->expires>=time()));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
         $this->cookies[$name] = new Cookie(['name' => $name]);
       }
 
-      $this->cookies[$name]->expire = 1;
+      $this->cookies[$name]->expires = 1;
     }
     else
     {

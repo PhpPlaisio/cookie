@@ -42,7 +42,7 @@ class Cookie
    *
    * @var ?int
    */
-  public $expire = 0;
+  public $expires = 0;
 
   /**
    * When TRUE the cookie will be made accessible only through the HTTP protocol. This means that the cookie won't be
@@ -52,7 +52,7 @@ class Cookie
    *
    * @var bool
    */
-  public $httpOnly = true;
+  public $httponly = true;
 
   /**
    * The name of the cookie.

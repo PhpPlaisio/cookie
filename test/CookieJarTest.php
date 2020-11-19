@@ -146,18 +146,18 @@ class CookieJarTest extends TestCase
   public function testHas(): void
   {
     $cookies = new CookieJar([['name' => 'name1'],
-                              ['name'   => 'name2',
-                               'value'  => 'value2',
-                               'expire' => null],
-                              ['name'   => 'name3',
-                               'value'  => 'value3',
-                               'expire' => 0],
-                              ['name'   => 'name4',
-                               'value'  => 'value4',
-                               'expire' => time() - 100],
-                              ['name'   => 'name5',
-                               'value'  => 'value5',
-                               'expire' => time() + 365 * 24 * 60 * 560]]);
+                              ['name'    => 'name2',
+                               'value'   => 'value2',
+                               'expires' => null],
+                              ['name'    => 'name3',
+                               'value'   => 'value3',
+                               'expires' => 0],
+                              ['name'    => 'name4',
+                               'value'   => 'value4',
+                               'expires' => time() - 100],
+                              ['name'    => 'name5',
+                               'value'   => 'value5',
+                               'expires' => time() + 365 * 24 * 60 * 560]]);
 
     self::assertFalse($cookies->has('name0'));
     self::assertFalse($cookies->has('name1'));
@@ -211,15 +211,15 @@ class CookieJarTest extends TestCase
 
     $cookies->remove('name1', true);
     self::assertNotNull($cookies->get('name1'));
-    self::assertSame(1, $cookies['name1']->expire);
+    self::assertSame(1, $cookies['name1']->expires);
 
     $cookies->remove('name1', true);
     self::assertNotNull($cookies->get('name1'));
-    self::assertSame(1, $cookies['name1']->expire);
+    self::assertSame(1, $cookies['name1']->expires);
 
     $cookies->remove('name0', true);
     self::assertNotNull($cookies->get('name0'));
-    self::assertSame(1, $cookies['name0']->expire);
+    self::assertSame(1, $cookies['name0']->expires);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
