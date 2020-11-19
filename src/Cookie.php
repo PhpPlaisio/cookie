@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Plaisio\Cookie;
 
+use SetBased\Exception\LogicException;
+
 /**
  * Class for representing cookies.
  */
@@ -52,14 +54,14 @@ class Cookie
    *
    * @var bool
    */
-  public $httponly = true;
+  public $httpOnly = true;
 
   /**
    * The name of the cookie.
    *
    * @var string
    */
-  public $name;
+  public $name = '';
 
   /**
    * The path on the server in which the cookie will be available on.
@@ -104,10 +106,11 @@ class Cookie
   {
     foreach ($properties as $name => $value)
     {
-      if (property_exists($this, $name))
+      if (!property_exists($this, $name))
       {
-        $this->$name = $value;
+        throw new LogicException('Unknown property %s.', $name);
       }
+      $this->$name = $value;
     }
   }
 
