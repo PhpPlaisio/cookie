@@ -124,8 +124,7 @@ class CookieJarTest extends TestCase
   {
     $cookies = new CookieJar([['name' => 'name1'],
                               ['name'    => 'name2',
-                               'value'   => 'value2',
-                               'expires' => null],
+                               'value'   => 'value2'],
                               ['name'    => 'name3',
                                'value'   => 'value3',
                                'expires' => 0],

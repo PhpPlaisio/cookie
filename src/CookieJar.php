@@ -16,7 +16,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    *
    * @var Cookie[]
    */
-  private $cookies = [];
+  private array $cookies = [];
 
   //--------------------------------------------------------------------------------------------------------------------
   /**

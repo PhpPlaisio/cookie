@@ -36,14 +36,14 @@ class Cookie
    *
    * @var string
    */
-  public $domain = '';
+  public string $domain = '';
 
   /**
    * The timestamp at which the cookie expires. Defaults to 0, meaning "until the browser is closed".
    *
    * @var int
    */
-  public $expires = 0;
+  public int $expires = 0;
 
   /**
    * When TRUE the cookie will be made accessible only through the HTTP protocol. This means that the cookie won't be
@@ -53,28 +53,28 @@ class Cookie
    *
    * @var bool
    */
-  public $httpOnly = true;
+  public bool $httpOnly = true;
 
   /**
    * The name of the cookie.
    *
    * @var string
    */
-  public $name = '';
+  public string $name = '';
 
   /**
    * The path on the server in which the cookie will be available on.
    *
    * @var string
    */
-  public $path = '/';
+  public string $path = '/';
 
   /**
    * The PHP default value is NULL, however, our default value is 'Lax'.
    *
    * @var ?string
    */
-  public $sameSite = self::SAME_SITE_LAX;
+  public ?string $sameSite = self::SAME_SITE_LAX;
 
   /**
    * Indicates that the cookie should only be transmitted over a secure HTTPS connection from the client. When set to
@@ -85,14 +85,14 @@ class Cookie
    *
    * @var bool
    */
-  public $secure = true;
+  public bool $secure = true;
 
   /**
    * The value of the cookie.
    *
    * @var string
    */
-  public $value = '';
+  public string $value = '';
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
