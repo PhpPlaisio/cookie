@@ -6,7 +6,7 @@ namespace Plaisio\Cookie;
 use SetBased\Exception\FallenException;
 
 /**
- * The cookie jar, class for handling cookies.
+ * The cookie jar, class for handling cookies to must send to the user agent.
  */
 class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
 {
@@ -22,7 +22,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
   /**
    * Object constructor.
    *
-   * @param array[Cookie]|array[]|array<string,string> $cookies The cookies.
+   * @param Cookie[] $cookies The cookies.
    */
   public function __construct(array $cookies = [])
   {
@@ -30,10 +30,6 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
     {
       switch (true)
       {
-        case is_string($value):
-          $this->cookies[$key] = new Cookie(['name' => $key, 'value' => $value, 'expires' => null]);
-          break;
-
         case is_array($value):
           $this->cookies[$value['name']] = new Cookie($value);
           break;

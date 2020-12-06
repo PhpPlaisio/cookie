@@ -19,7 +19,12 @@ class CookieJarTest extends TestCase
    */
   public function testAdd(): void
   {
-    $cookies = new CookieJar(['name1' => 'value1', 'name2' => 'value2', 'name3' => 'value3']);
+    $cookies = new CookieJar([new Cookie(['name'  => 'name1',
+                                          'value' => 'value1']),
+                              new Cookie(['name'  => 'name2',
+                                          'value' => 'value2']),
+                              new Cookie(['name'  => 'name3',
+                                          'value' => 'value3'])]);
 
     $cookies->add(new Cookie(['name'  => 'name4',
                               'value' => 'value4']));
@@ -34,42 +39,9 @@ class CookieJarTest extends TestCase
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Test constructor with key value pairs.
-   */
-  public function testConstructor1(): void
-  {
-    $cookies = new CookieJar(['name1' => 'value1', 'name2' => 'value2', 'name3' => 'value3']);
-
-    self::assertSame(3, count($cookies));
-    self::assertSame('value1', $cookies->getValue('name1'));
-    self::assertSame('value2', $cookies->getValue('name2'));
-    self::assertSame('value3', $cookies->getValue('name3'));
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
-   * Test constructor with arrays.
-   */
-  public function testConstructor2(): void
-  {
-    $cookies = new CookieJar([['name'  => 'name1',
-                               'value' => 'value1'],
-                              ['name'  => 'name2',
-                               'value' => 'value2'],
-                              ['name'  => 'name3',
-                               'value' => 'value3']]);
-
-    self::assertSame(3, count($cookies));
-    self::assertSame('value1', $cookies->getValue('name1'));
-    self::assertSame('value2', $cookies->getValue('name2'));
-    self::assertSame('value3', $cookies->getValue('name3'));
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
    * Test constructor with cookies.
    */
-  public function testConstructor3(): void
+  public function testConstructor1(): void
   {
     $cookies = new CookieJar([new Cookie(['name'  => 'name1',
                                           'value' => 'value1']),
@@ -88,7 +60,7 @@ class CookieJarTest extends TestCase
   /**
    * Test constructor with illegal value.
    */
-  public function testConstructor4(): void
+  public function testConstructor2(): void
   {
     $this->expectException(FallenException::class);
 
@@ -107,7 +79,12 @@ class CookieJarTest extends TestCase
    */
   public function testGet(): void
   {
-    $cookies = new CookieJar(['name1' => 'value1', 'name2' => 'value2', 'name3' => 'value3']);
+    $cookies = new CookieJar([new Cookie(['name'  => 'name1',
+                                          'value' => 'value1']),
+                              new Cookie(['name'  => 'name2',
+                                          'value' => 'value2']),
+                              new Cookie(['name'  => 'name3',
+                                          'value' => 'value3'])]);
 
     $cookie2 = $cookies->get('name2');
     self::assertSame('value2', $cookie2->value);

@@ -12,7 +12,8 @@
   },
   "require-dev": {
     "phing/phing": "^2.0",
-    "phpunit/phpunit": "^9.0"
+    "phpunit/phpunit": "^9.0",
+    "plaisio/console": "^2.4"
   },
   "autoload": {
     "psr-4": {

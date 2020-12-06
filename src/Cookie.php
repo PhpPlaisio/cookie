@@ -39,10 +39,9 @@ class Cookie
   public $domain = '';
 
   /**
-   * The timestamp at which the cookie expires. Defaults to 0, meaning "until the browser is closed". If NULL the cookie
-   * will not be send to the user agent.
+   * The timestamp at which the cookie expires. Defaults to 0, meaning "until the browser is closed".
    *
-   * @var ?int
+   * @var int
    */
   public $expires = 0;
 
@@ -71,8 +70,7 @@ class Cookie
   public $path = '/';
 
   /**
-   *
-   * The PHP default value is NULL, however our default value is 'Lax'.
+   * The PHP default value is NULL, however, our default value is 'Lax'.
    *
    * @var ?string
    */
@@ -83,7 +81,7 @@ class Cookie
    * TRUE, the cookie will only be set if a secure connection exists. On the server-side, it's on the programmer to
    * send this kind of cookie only on secure connection.
    *
-   * The PHP default value is false, however our default value is true.
+   * The PHP default value is false, however, our default value is true.
    *
    * @var bool
    */
