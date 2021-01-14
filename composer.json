@@ -8,12 +8,12 @@
   "license": "MIT",
   "require": {
     "php": ">=7.4",
-    "setbased/exception": "^2.1"
+    "setbased/exception": "^2.1.2"
   },
   "require-dev": {
-    "phing/phing": "^2.0",
-    "phpunit/phpunit": "^9.0",
-    "plaisio/console": "^2.4"
+    "phing/phing": "^2.16.3",
+    "phpunit/phpunit": "^9.5.0",
+    "plaisio/console": "^2.4.8"
   },
   "autoload": {
     "psr-4": {
