@@ -5,6 +5,12 @@ filter:
     - 'test/'
 
 build:
+  environment:
+    php:
+      version: '7.4'
+      pecl_extensions:
+        - inotify
+
   nodes:
     analysis:
       tests:
