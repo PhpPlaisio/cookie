@@ -21,8 +21,9 @@
 <td>
 <a href="https://packagist.org/packages/plaisio/cookie"><img src="https://poser.pugx.org/plaisio/cookie/v/stable" alt="Latest Stable Version"/></a>
 </td>
-<td><a href="https://travis-ci.org/PhpPlaisio/cookie"><img src="https://travis-ci.org/PhpPlaisio/cookie.svg?branch=master" alt="Build Status"/></a><br/>
-<a href="https://scrutinizer-ci.com/g/PhpPlaisio/cookie/?branch=master"><img src="https://scrutinizer-ci.com/g/PhpPlaisio/cookie/badges/coverage.png?b=master" alt="Code Coverage"/></a><br/>
+<td>
+<a href="https://github.com/PhpPlaisio/cookie/actions/workflows/unit.yml"><img src="https://github.com/PhpPlaisio/cookie/actions/workflows/unit.yml/badge.svg" alt="Build Status"/></a><br/>
+<a href="https://codecov.io/gh/PhpPlaisio/cookie"><img src="https://codecov.io/gh/PhpPlaisio/cookie/branch/master/graph/badge.svg" alt="Code Coverage"/></a>
 </td>
 <td>
 <a href="https://scrutinizer-ci.com/g/PhpPlaisio/cookie/?branch=master"><img src="https://scrutinizer-ci.com/g/PhpPlaisio/cookie/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"/></a>
