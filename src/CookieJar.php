@@ -19,6 +19,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
   private array $cookies = [];
 
   //--------------------------------------------------------------------------------------------------------------------
+
   /**
    * Object constructor.
    *
@@ -52,7 +53,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    *
    * @param Cookie $cookie The cookie to be added.
    */
-  public function add(Cookie $cookie)
+  public function add(Cookie $cookie): void
   {
     $this->cookies[$cookie->name] = $cookie;
   }
@@ -66,7 +67,7 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    *
    * @return int
    */
-  public function count()
+  public function count(): int
   {
     return count($this->cookies);
   }
@@ -140,16 +141,16 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
   /**
    * Returns whether there is a cookie with the specified name.
    *
-   * @param mixed $name The name of the cookie.
+   * @param mixed $offset The name of the cookie.
    *
    * This method is required by the SPL interface [[\ArrayAccess]]. It is implicitly called when you use something like
    * `isset(cookies[$name])`.
    *
    * @return bool
    */
-  public function offsetExists($name)
+  public function offsetExists(mixed $offset): bool
   {
-    return $this->has($name);
+    return $this->has($offset);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -159,13 +160,13 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    * This method is required by the SPL interface [[\ArrayAccess]]. It is implicitly called when you use something like
    * `$cookie = $cookies[$name];`. This is equivalent to [[get()]].
    *
-   * @param mixed $name The name of the cookie.
+   * @param mixed $offset The name of the cookie.
    *
    * @return Cookie|null
    */
-  public function offsetGet($name)
+  public function offsetGet(mixed $offset): ?Cookie
   {
-    return $this->get($name);
+    return $this->get($offset);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -175,12 +176,12 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    * This method is required by the SPL interface [[\ArrayAccess]]. It is implicitly called when you use something like
    * `$cookies[$name] = $cookie;`. This is equivalent to [[add()]].
    *
-   * @param mixed $name   The name of the cookie.
-   * @param mixed $cookie The cookie to be added.
+   * @param mixed $offset The name of the cookie.
+   * @param mixed $value  The cookie to be added.
    */
-  public function offsetSet($name, $cookie)
+  public function offsetSet(mixed $offset, mixed $value): void
   {
-    $this->add($cookie);
+    $this->add($value);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -190,11 +191,11 @@ class CookieJar implements \IteratorAggregate, \ArrayAccess, \Countable
    * This method is required by the SPL interface [[\ArrayAccess]].It is implicitly called when you use something like
    * `unset($cookies[$name])`. This is equivalent to [[remove()]].
    *
-   * @param mixed $name The name of the cookie.
+   * @param mixed $offset The name of the cookie.
    */
-  public function offsetUnset($name)
+  public function offsetUnset(mixed $offset): void
   {
-    $this->remove($name);
+    $this->remove($offset);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
